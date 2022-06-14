@@ -2,31 +2,33 @@
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
         <members>HelloWorld</members>
-		<members>Dreamworld</members>
-		<members>Student</members>
-		<members>StudentQuery</members>
+		    <members>Dreamworld</members>
+		    <members>Student</members>
+	     	<members>StudentQuery</members>
         <name>ApexClass</name>
     </types>
     <types>
         <members>HelloWorld__c.HelloField__c</members>
-		<members>Dream_world__c.Dream_world__c</members>
+      	<members>Dream_world__c.Dream_world__c</members>
+	      <members>Dream_world__c.Dream_world__c</members>
         <name>CustomField</name>
     </types>
     <types>
         <members>HelloWorld__c</members>
-		<members>Dream_world__c</members>
-		<members>Student__c</members>
+		    <members>Dream_world__c</members>
+	    	<members>Student__c</members>
         <name>CustomObject</name>
     </types>
     <types>
         <members>HelloWorld__c</members>
-		<members>Dream_World__c</members>
-		<members>Student__c</members>
+		    <members>Dream_World__c</members>
+		    <members>Student__c</members>
 		<name>CustomTab</name>
+        <name>CustomTab</name>
     </types>
 	<types>
-		<members>Student__c-Registrar Layout</members>
-		<members>Student__c-Teacher Layout</members>
+	      <members>Student__c-Registrar Layout</members>
+		    <members>Student__c-Teacher Layout</members>
 		<name>Layout</name>
 	</types>
     <version>53.0</version>
