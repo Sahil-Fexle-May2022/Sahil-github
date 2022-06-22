@@ -5,6 +5,10 @@
 		<members>Dreamworld</members>
 		<members>Student</members>
 	    <members>StudentQuery</members>
+		<members>DownTriangle</members>
+		<members>HelloWorldTestClass</members>
+		<members>LeftTrianglePascal</members>
+		<members>MyHelloWorld</members>
 		<name>ApexClass</name>
     </types>
     <types>
@@ -17,6 +21,7 @@
         <members>HelloWorld__c</members>
 		<members>Dream_world__c</members>
 	    <members>Student__c</members>
+		<members>Book__c</members>
 		<name>CustomObject</name>
     </types>
     <types>
@@ -69,5 +74,9 @@
         <members>Year_Of_Class__c-Year Of Class Layout</members>
         <name>Layout</name>
     </types>
+	<types>
+		<members>*</members>
+		<name>ApexTrigger</name>
+	</types>
     <version>53.0</version>
 </Package>
