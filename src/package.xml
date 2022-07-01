@@ -16,6 +16,15 @@
         <members>MethodOverloading</members>
         <members>MethodOverriding</members>
         <members>PracticeLoops</members>
+		<members>CustomerPurchaseOrder</members>
+		<members>EmployeePurchaseOrder</members>
+		<members>InstanceofExample</members>
+		<members>ProcessPurchaseOrder</members>
+		<members>PurchaseOrder</members>
+		<members>SellerPurchaseOrder</members>
+		<members>SuperClass</members>
+		<members>SuperSubClass</members>
+		<members>ThisKeyword</members>
 		<name>ApexClass</name>
     </types>
     <types>
