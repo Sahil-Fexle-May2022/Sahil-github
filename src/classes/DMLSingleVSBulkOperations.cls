@@ -15,9 +15,7 @@ public with sharing class DMLSingleVSBulkOperations {
         }
         catch(Exception e)
         {
-            {
-                System.debug('An unexpected error has occurred: ' + e.getMessage());
-            }
+           System.debug('An unexpected error has occurred: ' + e.getMessage());   
         }
     }
 }
