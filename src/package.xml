@@ -32,6 +32,7 @@
 		<members>ParentChildRelationship</members>
 		<members>PracticeDmlTypes</members>
 		<members>RelatingRecordsByExternalID</members>
+		<members>CountryStateDataMapProcess</members>
 		<name>ApexClass</name>
     </types>
     <types>
@@ -56,6 +57,9 @@
         <members>Subject__c</members>
         <members>Teachers__c</members>
         <members>Year_Of_Class__c</members>
+		<members>Country__c</members>
+		<members>District__c</members>
+		<members>State__c</members>
 		<name>CustomObject</name>
     </types>
     <types>
