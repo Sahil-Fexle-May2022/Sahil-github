@@ -4,11 +4,11 @@ public with sharing class CountryStateDataMapProcess {
     //In This Aggregate Result We Are Counting Total Number Of Country, States And Districts  
     public static void AggregateResult() {
         try{
-            //Get Number Of Total Country
-            List<AggregateResult> state = [SELECT Country__c, COUNT(Name)Total_States FROM State__c Group By  Country__c];
-            if(state.size() > 0) {
+            //Get Number Of Total States Of Country
+            List<AggregateResult> countOfStatesOfCountry = [SELECT Country__c, COUNT(Name)Total_States FROM State__c Group By  Country__c];
+            if(countOfStatesOfCountry.size() > 0) {
                 Map<ID , Country__c> mapOfTotalStates = new  Map<ID , Country__c>();           
-                for(AggregateResult states : state) { 
+                for(AggregateResult states : countOfStatesOfCountry) { 
                     Country__c stateDetail = new Country__c();
                     stateDetail.ID = (ID)states.get('Country__c');
                     stateDetail.Total_States__c = (Decimal)states.get('Total_States');
@@ -18,12 +18,12 @@ public with sharing class CountryStateDataMapProcess {
                     update mapOfTotalStates.values();
                 }
             } 
-            
-            //Get Number Of Total States Of Country   
-            List<AggregateResult> district = [SELECT  State__c, COUNT(Name)Total_Districts FROM District__c Group By  State__c];
-            if(district.size() > 0) {
+    
+            //Get Number Of Total Districts Of State   
+            List<AggregateResult> countOfDistrictsOfState = [SELECT  State__c, COUNT(Name)Total_Districts FROM District__c Group By  State__c];
+            if(countOfDistrictsOfState.size() > 0) {
                 Map<ID , State__c> mapOfTotalDistricts = new  Map<ID , State__c>();
-                for(AggregateResult districts : district) { 
+                for(AggregateResult districts : countOfDistrictsOfState) { 
                     State__c districtDetail = new State__c();
                     districtDetail.ID = (ID)districts.get('State__c');
                     districtDetail.Total_Districts__c = (Decimal)districts.get('Total_Districts');
@@ -35,10 +35,11 @@ public with sharing class CountryStateDataMapProcess {
             }
             
             //Get Number Of Total District Of Country
-            List<AggregateResult> countryDistrict = [SELECT Country__c, SUM(Total_Districts__c) Total_Districts FROM State__c Group By  Country__c];
-            if(countryDistrict.size() > 0) {       
+
+            List<AggregateResult> countOfDistrictsOfCountry = [SELECT Country__c, SUM(Total_Districts__c) Total_Districts FROM State__c Group By  Country__c];
+            if(countOfDistrictsOfCountry.size() > 0) {       
                 Map<ID , Country__c> mapOfTotalCountryDistricts = new  Map<ID , Country__c>();
-                for(AggregateResult countryDistricts : countryDistrict) { 
+                for(AggregateResult countryDistricts : countOfDistrictsOfCountry) { 
                     Country__c countryDistrictDetail = new Country__c();
                     countryDistrictDetail.ID = (ID)countryDistricts.get('Country__c');
                     countryDistrictDetail.Total_District__c = (Decimal)countryDistricts.get('Total_Districts');        
