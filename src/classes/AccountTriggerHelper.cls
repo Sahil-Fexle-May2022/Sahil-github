@@ -1,9 +1,9 @@
-public with sharing class AccountHelperClass{
+public with sharing class AccountTriggerHelper{
     //In This Method We Are Set a Prefix On Saving Account And FD Account
-    public static void setPrefixOnAccount(List<Account> prefixList){
+    public static void setPrefixOnAccount(List<Account> newAccountList){
         try{
-            if(prefixList.size() > 0){
-                for(Account acc : prefixList){
+            if(newAccountList.size() > 0){
+                for(Account acc : newAccountList){
                     if(acc.Account_Type__c == 'Saving-Account'){
                         acc.AccountNumber = 'SA-' +acc.AccountNumber;
                     }
@@ -18,13 +18,13 @@ public with sharing class AccountHelperClass{
         }
     }
     //In This Method We Are Sending an Email To Customer
-    public static void sendingEmail(List<Account> prefixList){
+    public static void sendingEmail(List<Account> newAccountList){
         try{
             //Creating a Master List To Hold The Emails We Want To Send       
             List<Messaging.SingleEmailMessage> emailsend = new List<Messaging.SingleEmailMessage>();
-            for(Account acc : prefixList){              
+            for(Account acc : newAccountList){              
                 Messaging.SingleEmailMessage email = new Messaging.SingleEmailMessage(); 
-                if(email != null){
+                if(acc.Email__c != null){
                 //Set a Email Address
                 email.setToAddresses(new List<String>{acc.Email__c});
                 //Set a Subject Of Email

@@ -32,16 +32,16 @@
 		<members>ParentChildRelationship</members>
 		<members>PracticeDmlTypes</members>
 		<members>RelatingRecordsByExternalID</members>
-		<members>CountryStateDataMapProcess</members>
-		<members>AccountHelperClass</members>
+		<members>CountryStateDataMapProcess</members>	
+		<members>AccountTriggerHelper</members>
 		<name>ApexClass</name>
     </types>
     <types>
         <members>HelloWorld__c.HelloField__c</members>
       	<members>Dream_world__c.Dream_world__c</members>
 	    <members>Dream_world__c.Dream_world__c</members>
-		<members>Account.Account_Type__c</members>
-		<members>Account.Email__c</members>
+		 <members>Account.Account_Type__c</members>
+        <members>Account.Email__c</members>
 	    <name>CustomField</name>
     </types>
     <types>
