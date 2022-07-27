@@ -1,9 +1,10 @@
 public with sharing class ContactTriggerHelper{
     //In This Method We Are Counting How Many Contacts exist in One Account
-    public static void TotalContactPerAccount(List<Contact> newContactList){
+    public static void totalContactPerAccount(List<Contact> newContactList){
         try{
-            if(newContactList.size() > 0){
-                Set<Id> accId = new Set<Id>();    
+            if(newContactList.size() > 0){                
+                Set<Id> accId = new Set<Id>();  
+                if(accId.size() > 0){  
                 for(Contact con : newContactList){
                     accId.add(con.AccountId);
                 }            
@@ -30,9 +31,12 @@ public with sharing class ContactTriggerHelper{
                 }
                 
                 //Here we are update a accList Using Dml
+                if(accList != null){
                 update accList;
+                }
             }
         }
+    }
         catch(DmlException e){
             system.debug('An unexpected error has occurred: ' + e.getMessage());
         }
