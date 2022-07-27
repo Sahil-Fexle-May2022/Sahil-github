@@ -534,6 +534,17 @@
         <type>Email</type>
         <unique>false</unique>
     </fields>
+	 <fields>
+        <fullName>NumberOfContact__c</fullName>
+        <externalId>false</externalId>
+        <label>NumberOfContact</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
     <listViews>
         <fullName>AllAccounts</fullName>
         <filterScope>Everything</filterScope>
