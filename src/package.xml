@@ -34,6 +34,7 @@
 		<members>RelatingRecordsByExternalID</members>
 		<members>CountryStateDataMapProcess</members>	
 		<members>AccountTriggerHelper</members>
+		<members>OpportunityTriggerHelper</members>
 		<members>Contact_TriggerHandler</members>
 		<members>CountryStateDataMapProcess</members>
 		<members>DistrictTriggerHelper</members>
