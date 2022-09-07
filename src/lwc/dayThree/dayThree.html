@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Result" icon-name="custom:custom63">
+        <div class="slds-var-m-around_medium">
+            <p class="slds-var-m-bottom_small">
+                <lightning-button variant="brand" label="Status" onclick={handleLoadOne}></lightning-button>
+            </p>
+            <p class="slds-var-m-bottom_small">
+                <lightning-button variant="brand" label="Status" onclick={handleLoadTwo}></lightning-button>
+            </p>
+            <p class="slds-var-m-bottom_small">
+                <lightning-button variant="brand" label="Status" onclick={handleLoadThree}></lightning-button>
+            </p>
+            <template if:true={resultOne}>
+                <p>{resultOne}</p>
+            </template>
+            <template if:true={resultTwo}>
+                <p>{resultOne} {resultTwo}</p>
+            </template>
+            <template if:true={resultThree}>
+                <p>{resultOne} {resultTwo} {resultThree}</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>
