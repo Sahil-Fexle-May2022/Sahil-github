@@ -39,6 +39,7 @@
 		<members>CountryStateDataMapProcess</members>
 		<members>DistrictTriggerHelper</members>
 		<members>StateTriggerHelper</members>
+		<members>MethodList</members>
 		<name>ApexClass</name>
     </types>
     <types>
