@@ -9,9 +9,7 @@ public with sharing class CountryTriggerHandler {
         }
         if(!setOfCountryId.isEmpty()){
 
-            Map<Id,State__c> mapOfStatewithCountry = new Map<Id,State__c>([SELECT Id, Country__c, 
-                                                                           country__r.Id, Country__r.Name,country__r.Total_States__c,country__r.Total_District__c, Name, Total_Districts__c, (SELECT id, Name FROM Districts__r)
-                                                                           FROM State__c WHERE country__r.Id IN : setOfCountryId]);
+            Map<Id,State__c> mapOfStatewithCountry = new Map<Id,State__c>([SELECT Id, Country__c, country__r.Id, Country__r.Name,country__r.Total_States__c,country__r.Total_District__c, Name, Total_Districts__c, (SELECT id, Name FROM Districts__r) FROM State__c WHERE country__r.Id IN : setOfCountryId]);
             System.debug(mapOfStatewithCountry.values());
 
             for(Country__c cont : newCountryList){
