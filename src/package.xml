@@ -42,6 +42,7 @@
 		<members>CountryTriggerHandler</members>
 		<members>DistrictTriggerHandler</members>
 		<members>StateTriggerHandler</members>
+		<members>MethodList</members>
 		<name>ApexClass</name>
     </types>
     <types>
