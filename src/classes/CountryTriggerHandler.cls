@@ -3,7 +3,8 @@ public with sharing class CountryTriggerHandler {
 
         Set<Id> setOfCountryId = new Set<Id>();
         for(Country__c cont : newCountryList){
-            if(oldCountryMap != null){   
+            if(oldCountryMap != null && (cont.Total_States__c !=oldCountryMap.get(cont.Id).Total_States__c )
+            ||(cont.Total_District__c !=oldCountryMap.get(cont.Id).Total_District__c)){   
                 setOfCountryId.add(cont.Id);                             
             }
         }
@@ -11,7 +12,7 @@ public with sharing class CountryTriggerHandler {
 
             Map<Id,State__c> mapOfStatewithCountry = new Map<Id,State__c>([SELECT Id, Country__c,country__r.Id,Country__r.Name,country__r.Total_States__c,
                                                                            country__r.Total_District__c, Name,Total_Districts__c,(SELECT id, Name FROM Districts__r)
-                                                                           FROM State__c WHERE country__r.Id IN : setOfCountryId]);
+                                                                           FROM State__c WHERE Country__c IN : setOfCountryId]);
             System.debug(mapOfStatewithCountry.values());
 
             for(Country__c cont : newCountryList){
@@ -29,6 +30,7 @@ public with sharing class CountryTriggerHandler {
                         States wrapState = new States();
                         wrapState.stateName = st.Name;
                         wrapState.districts = new List<Districts>();
+                        wrapState.totalDistrict = String.valueof(st.Total_Districts__c);
                         for(District__c dt : st.Districts__r){
                             Districts wrapDistrict = new Districts();
                             wrapDistrict.districtName = dt.Name;
@@ -52,6 +54,8 @@ public with sharing class CountryTriggerHandler {
     public class States{
         Public string stateName{get; set;}
         Public List<Districts> districts{get; set;}
+        Public String totalDistrict{get; set;}
+
     }
     public class Districts{
         Public String districtName{get; set;}
