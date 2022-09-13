@@ -4,7 +4,7 @@
         <c-child-lwc onprogressvaluechange={handleprogressvaluechange}></c-child-lwc>
         <div class="container">
             <lightning-layout vertical-align="center" class="slds-p-horizontal_xx-small">
-                <lightning-layout-item>{progressValue}%</lightning-layout-item>
+                <lightning-layout-item class="slds-p-left_small">{progressValue}%</lightning-layout-item>
                 <lightning-layout-item flexibility="grow">
                     <div class="bar" style={style}></div>
                 </lightning-layout-item>
