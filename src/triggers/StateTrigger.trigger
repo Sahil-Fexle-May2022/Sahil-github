@@ -1,7 +1,12 @@
-trigger StateTrigger on State__c (after insert, after update, after delete) {
+trigger StateTrigger on State__c (before update, after insert, after update, after delete) {
+    if(Trigger.isBefore){
+        if(Trigger.isUpdate){
+            StateTriggerHandler.stateJsonData(Trigger.New,Trigger.OldMap);
+        }
+    }
     if(Trigger.isAfter){
         if(Trigger.isInsert || Trigger.isUpdate || Trigger.isDelete){
-        StateTriggerHelper.countStatesOnCountry(Trigger.New, Trigger.Old);
+            StateTriggerHandler.updatingStateAndDistrictCountOnCountry(Trigger.New, Trigger.OldMap);
         }
     }
 }
