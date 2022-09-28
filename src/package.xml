@@ -39,6 +39,9 @@
 		<members>CountryStateDataMapProcess</members>
 		<members>DistrictTriggerHelper</members>
 		<members>StateTriggerHelper</members>
+		<members>CountryTriggerHandler</members>
+		<members>DistrictTriggerHandler</members>
+		<members>StateTriggerHandler</members>
 		<members>MethodList</members>
 		<name>ApexClass</name>
     </types>
@@ -48,6 +51,7 @@
 	    <members>Dream_world__c.Dream_world__c</members>
 		 <members>Account.Account_Type__c</members>
         <members>Account.Email__c</members>
+		<members>State__c.State_JSON_Data__c</members>
 	    <name>CustomField</name>
     </types>
     <types>
@@ -69,6 +73,7 @@
 		<members>Country__c</members>
 		<members>District__c</members>
 		<members>State__c</members>
+		<members>Country__c</members>
 		<name>CustomObject</name>
     </types>
     <types>
